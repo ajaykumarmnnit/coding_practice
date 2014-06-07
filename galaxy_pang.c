@@ -1,3 +1,5 @@
+//Code for finding max of if combine two same adjacent elements of an array and adding another array elemnt
+// at last
 //Galaxy Pang code using back tracking( This commnt I made in branch1 )
 #include<stdio.h>
 

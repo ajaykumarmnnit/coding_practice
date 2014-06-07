@@ -1,3 +1,4 @@
+//Galaxy Pang code using back tracking( This commnt I made in branch1 )
 #include<stdio.h>
 
 int final_max,a[100],get[100],n,k;

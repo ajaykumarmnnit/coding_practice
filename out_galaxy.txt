@@ -1,0 +1,91 @@
+calling a[0]=1 get_index=0
+Before modifying
+
+1 1 2 2 3 3    Items in pick-up array  3 2 
+calling a[0]=2 get_index=1
+Before modifying
+
+2 2 2 3 3 3    Items in pick-up array  2 
+Reached in final condition
+
+3 2 3 3 3 2    Items in pick-up array  
+calling a[1]=2 get_index=1
+Before modifying
+
+2 2 2 3 3 3    Items in pick-up array  2 
+Reached in final condition
+
+2 3 3 3 3 2    Items in pick-up array  
+calling a[3]=3 get_index=1
+Before modifying
+
+2 2 2 3 3 3    Items in pick-up array  2 
+Reached in final condition
+
+2 2 2 4 3 2    Items in pick-up array  
+calling a[4]=3 get_index=1
+Before modifying
+
+2 2 2 3 3 3    Items in pick-up array  2 
+Reached in final condition
+
+2 2 2 3 4 2    Items in pick-up array  
+calling a[2]=2 get_index=0
+Before modifying
+
+1 1 2 2 3 3    Items in pick-up array  3 2 
+calling a[0]=1 get_index=1
+Before modifying
+
+1 1 3 3 3 3    Items in pick-up array  2 
+Reached in final condition
+
+2 3 3 3 3 2    Items in pick-up array  
+calling a[2]=3 get_index=1
+Before modifying
+
+1 1 3 3 3 3    Items in pick-up array  2 
+Reached in final condition
+
+1 1 4 3 3 2    Items in pick-up array  
+calling a[3]=3 get_index=1
+Before modifying
+
+1 1 3 3 3 3    Items in pick-up array  2 
+Reached in final condition
+
+1 1 3 4 3 2    Items in pick-up array  
+calling a[4]=3 get_index=1
+Before modifying
+
+1 1 3 3 3 3    Items in pick-up array  2 
+Reached in final condition
+
+1 1 3 3 4 2    Items in pick-up array  
+calling a[4]=3 get_index=0
+Before modifying
+
+1 1 2 2 3 3    Items in pick-up array  3 2 
+calling a[0]=1 get_index=1
+Before modifying
+
+1 1 2 2 4 3    Items in pick-up array  2 
+Reached in final condition
+
+2 2 2 4 3 2    Items in pick-up array  
+calling a[2]=2 get_index=1
+Before modifying
+
+1 1 2 2 4 3    Items in pick-up array  2 
+Reached in final condition
+
+1 1 3 4 3 2    Items in pick-up array  
+MAX is 4
+calling a[0]=3 get_index=0
+Before modifying
+
+3 3 1    Items in pick-up array  3 3 3 
+Reached in final condition
+
+4 1 3    Items in pick-up array  3 3 
+MAX is 4

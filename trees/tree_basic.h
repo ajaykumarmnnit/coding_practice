@@ -10,3 +10,5 @@ TREE* insert(TREE* ,TREE*);
 void preorder(TREE*);
 void inorder(TREE*);
 void postorder(TREE*);
+void levelorder(TREE*);
+int height(TREE*);

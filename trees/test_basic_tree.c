@@ -11,6 +11,8 @@ int main()
 	inorder(root);
 	printf("\nPostOrder: ");
 	postorder(root);
+	printf("\nLevelOrder: ");
+	levelorder(root);
 	printf("\n");
 
 	return 0;

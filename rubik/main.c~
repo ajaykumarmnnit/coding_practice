@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-
 #define W 0
 #define G 1
 #define R 2
@@ -53,6 +52,76 @@ int print_cube()
 		printf("\n");
 	}
 
+}
+
+int find_connected_two(int cube_no,int row,int col)
+{
+	if( cube_no==0)
+	{
+		if(row==0 && col==1)
+			return cube[4][0][1];
+		if(row==1 && col==0)
+			return cube[1][0][1];
+		if(row==1 && col==2)
+			return cube[3][0][1];
+		if(row==2 && col==1)
+			return cube[2][0][1];
+	}
+	if( cube_no==1)
+	{
+		if(row==0 && col==1)
+			return cube[0][1][0];
+		if(row==1 && col==0)
+			return cube[4][1][2];
+		if(row==1 && col==2)
+			return cube[2][1][0];
+		if(row==2 && col==1)
+			return cube[5][1][0];
+	}
+	if( cube_no==2)
+	{
+		if(row==0 && col==1)
+			return cube[0][2][1];
+		if(row==1 && col==0)
+			return cube[1][1][2];
+		if(row==1 && col==2)
+			return cube[3][1][0];
+		if(row==2 && col==1)
+			return cube[5][0][1];
+	}
+	if( cube_no==3)
+	{
+		if(row==0 && col==1)
+			return cube[0][1][2];
+		if(row==1 && col==0)
+			return cube[2][1][2];
+		if(row==1 && col==2)
+			return cube[4][1][0];
+		if(row==2 && col==1)
+			return cube[5][1][2];
+	}
+	if( cube_no==4)
+	{
+		if(row==0 && col==1)
+			return cube[0][0][1];
+		if(row==1 && col==0)
+			return cube[3][1][2];
+		if(row==1 && col==2)
+			return cube[1][1][0];
+		if(row==2 && col==1)
+			return cube[5][2][1];
+	}
+	if( cube_no==5)
+	{
+		if(row==0 && col==1)
+			return cube[2][2][1];
+		if(row==1 && col==0)
+			return cube[1][2][1];
+		if(row==1 && col==2)
+			return cube[3][2][1];
+		if(row==2 && col==1)
+			return cube[4][2][1];
+	}
 }
 
 int main()

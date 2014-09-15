@@ -2,7 +2,8 @@ Step 1:
 Always makes yellow first
 
 
-Step 2:
+Step 3:
+Set 
 Now see color which you are facing now. It could be R,B,O or G only.
 
 Now all possible moves and their methods can be 
@@ -19,4 +20,4 @@ Each method gets cube colors and  facing color as input. It will return after do
 
 Yellow Down and face Red
 Eg jumbled.txt is make by holding cube as specified and RC UC LAC UAC
-	solve this by	UC LC UAC RAC
+					solve this by	UC LC UAC RAC

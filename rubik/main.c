@@ -10,12 +10,12 @@
 
 char color[6]={'W','G','R','B','O','Y'};
 int cube[6][3][3];
-int correct_cube[6][3][3]= { { {0,0,0},{0,0,0},{0,0,0} },
-			     { {1,1,1},{1,1,1},{1,1,1} },
-			     { {2,2,2},{2,2,2},{2,2,2} },
-			     { {3,3,3},{3,3,3},{3,3,3} },
-			     { {4,4,4},{4,4,4},{4,4,4} },
-			     { {5,5,5},{5,5,5},{5,5,5} }
+int correct_cube[6][3][3]= { { {  0, 10, 20},{100,110,120},{200,210,220} },
+			     { {  1, 11, 21},{101,111,121},{201,211,221} },
+			     { {  2, 12, 22},{102,112,122},{202,212,222} },
+			     { {  3, 13, 23},{103,113,123},{203,213,223} },
+			     { {  4, 14, 24},{104,114,124},{204,214,224} },
+			     { {  5, 15, 25},{105,115,125},{205,215,225} }
 			   };
 int search_index(char c)
 {
@@ -56,7 +56,7 @@ int print_cube(int rcube[6][3][3])
 		printf("    ");
 		for(j=0;j<3;j++)
 		{
-			print_color(color[rcube[0][i][j]]);
+			print_color(color[rcube[0][i][j]%10]);
 		}
 		printf("\n");
 	}
@@ -66,7 +66,7 @@ int print_cube(int rcube[6][3][3])
 		{
 			if(j%3==0 && j!=0)
 				printf(" ");
-			print_color(color[rcube[j/3 +1][i][j%3]]);
+			print_color(color[rcube[j/3 +1][i][j%3]%10]);
 		}
 		printf("\n");
 	}
@@ -75,83 +75,117 @@ int print_cube(int rcube[6][3][3])
 		printf("    ");
 		for(j=0;j<3;j++)
 		{
-			print_color(color[rcube[5][i][j]]);
+			print_color(color[rcube[5][i][j]%10]);
 		}
 		printf("\n");
 	}
 	printf("\n");
 }
 
-int find_connected_two(int cube_no,int row,int col)
+int find_connected_two(int rcube[6][3][3],int cube_no,int row,int col)
 {
 	if( cube_no==0)
 	{
 		if(row==0 && col==1)
-			return cube[4][0][1];
+			return rcube[4][0][1]%10;
 		if(row==1 && col==0)
-			return cube[1][0][1];
+			return rcube[1][0][1]%10;
 		if(row==1 && col==2)
-			return cube[3][0][1];
+			return rcube[3][0][1]%10;
 		if(row==2 && col==1)
-			return cube[2][0][1];
+			return rcube[2][0][1]%10;
 	}
 	if( cube_no==1)
 	{
 		if(row==0 && col==1)
-			return cube[0][1][0];
+			return rcube[0][1][0]%10;
 		if(row==1 && col==0)
-			return cube[4][1][2];
+			return rcube[4][1][2]%10;
 		if(row==1 && col==2)
-			return cube[2][1][0];
+			return rcube[2][1][0]%10;
 		if(row==2 && col==1)
-			return cube[5][1][0];
+			return rcube[5][1][0]%10;
 	}
 	if( cube_no==2)
 	{
 		if(row==0 && col==1)
-			return cube[0][2][1];
+			return rcube[0][2][1]%10;
 		if(row==1 && col==0)
-			return cube[1][1][2];
+			return rcube[1][1][2]%10;
 		if(row==1 && col==2)
-			return cube[3][1][0];
+			return rcube[3][1][0]%10;
 		if(row==2 && col==1)
-			return cube[5][0][1];
+			return rcube[5][0][1]%10;
 	}
 	if( cube_no==3)
 	{
 		if(row==0 && col==1)
-			return cube[0][1][2];
+			return rcube[0][1][2]%10;
 		if(row==1 && col==0)
-			return cube[2][1][2];
+			return rcube[2][1][2]%10;
 		if(row==1 && col==2)
-			return cube[4][1][0];
+			return rcube[4][1][0]%10;
 		if(row==2 && col==1)
-			return cube[5][1][2];
+			return rcube[5][1][2]%10;
 	}
 	if( cube_no==4)
 	{
 		if(row==0 && col==1)
-			return cube[0][0][1];
+			return rcube[0][0][1]%10;
 		if(row==1 && col==0)
-			return cube[3][1][2];
+			return rcube[3][1][2]%10;
 		if(row==1 && col==2)
-			return cube[1][1][0];
+			return rcube[1][1][0]%10;
 		if(row==2 && col==1)
-			return cube[5][2][1];
+			return rcube[5][2][1]%10;
 	}
 	if( cube_no==5)
 	{
 		if(row==0 && col==1)
-			return cube[2][2][1];
+			return rcube[2][2][1]%10;
 		if(row==1 && col==0)
-			return cube[1][2][1];
+			return rcube[1][2][1]%10;
 		if(row==1 && col==2)
-			return cube[3][2][1];
+			return rcube[3][2][1]%10;
 		if(row==2 && col==1)
-			return cube[4][2][1];
+			return rcube[4][2][1]%10;
 	}
 }
+void first_step()
+{
+	int i,j,k,find=0;
+	for(i=0;i<6 && !find;i++)
+	{
+		for(j=0;j<3 && !find;j++)
+		{
+			for(k=0;k<3 && !find;k++)
+			{
+				if(cube[i][j][k]==5 && find_connected_two(cube,i,j,k)==1)
+				{
+					find=1;
+				}
+			}
+		}
+				
+	}
+	zi=i,zj=j;zk=k;	
+	
+	for(i=0;i<6 && !find;i++)
+	{
+		for(j=0;j<3 && !find;j++)
+		{
+			for(k=0;k<3 && !find;k++)
+			{
+				if(cube[i][j][k]==5 && find_connected_two(cube,i,j,k)==1)
+				{
+					find=1;
+				}
+			}
+		}
+				
+	}
 
+}
 int main()
 {
 	int i,j,k;
@@ -172,6 +206,9 @@ int main()
 	}
 	print_cube(cube);
 	print_cube(correct_cube);
+	//Solve
+	first_step();
+
 
 
 	return 0;
